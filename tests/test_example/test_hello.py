@@ -8,6 +8,7 @@ def test_read():
     authorization = "YOUR_API"
 
     payload = {"count": 100, "price": "M", "granularity": "S5"}
-    df = oandacandle(authorization, endpoint, "EURUSD", payload).get()
+    df1, error = oandacandle(authorization, endpoint, "EURUSD", payload).get()
 
-    assert not df.empty
+    # If succesful, error == 0
+    assert error == 1
