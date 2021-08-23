@@ -60,7 +60,7 @@ This project is licensed under the terms of the `GNU GPL v3.0` license.
 <p>&nbsp;</p>
 
 ```bibtex
-@misc{gexecute,
+@misc{gbrokerexe,
   author = {altcp},
   title = {Generic Python Package for Brokerage and Trade Executions},
   year = {2021},
