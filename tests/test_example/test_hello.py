@@ -2,7 +2,7 @@
 from gbrokerexe.oanda import oandacandle
 
 
-def read():
+def test_read():
 
     endpoint = "https://api-fxtrade.oanda.com/v3/instruments/"
     authorization = "YOUR_API"
