@@ -1,5 +1,5 @@
 """ Automated Tests and (or) Usage Examples """
-import gbrokerexe.oanda as exe
+from gbrokerexe.oanda import oandacandle
 
 
 def read():
@@ -8,6 +8,6 @@ def read():
     authorization = "YOUR_API"
 
     payload = {"count": 100, "price": "M", "granularity": "S5"}
-    df = exe.oandacandle(authorization, endpoint, "EURUSD", payload).get()
+    df = oandacandle(authorization, endpoint, "EURUSD", payload).get()
 
     assert not df.empty
