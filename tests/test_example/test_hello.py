@@ -1,7 +1,7 @@
 """ Automated Tests and (or) Usage Examples """
 import gbrokerexe.oanda as exe
 
-"""
+
 def read():
 
     endpoint = "https://api-fxtrade.oanda.com/v3/instruments/"
@@ -11,4 +11,3 @@ def read():
     df = exe.oandacandle(authorization, endpoint, "EURUSD", payload).get()
 
     assert not df.empty
-"""
