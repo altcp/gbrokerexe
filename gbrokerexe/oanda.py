@@ -315,3 +315,65 @@ class oandaorders:
             print(" ")
 
         return float(ticket)
+
+
+class oandadaily:
+    def __init__(
+        self,
+        account,
+        authorization,
+        endpoint,
+    ):
+
+        self.account = account
+        self.authorization = authorization
+        self.endpoint = endpoint
+
+    def getpnl(self):
+
+        now = datetime.datetime.now()
+        posting_date = now.replace(hour=0, minute=0, second=0, microsecond=0)
+
+        url_account = self.endpoint + self.account + "/transactions"
+        auth = {
+            "Authorization": "Bearer " + self.authorization,
+            "Content-Type": "application/json",
+        }
+
+        # Get Time
+        if posting_date.weekday() == 0:
+            from_date = datetime.date.today() - datetime.timedelta(days=3)
+        else:
+            from_date = datetime.date.today() - datetime.timedelta(days=1)
+
+        to_date = datetime.date.today() + datetime.timedelta(days=1)
+
+        try:
+
+            payload_one = {"from": from_date, "to": to_date, "pageSize": 999}
+            response = requests.get(url_account, params=payload_one, headers=auth)
+            raw = response.json()
+            df = pd.DataFrame(raw["pages"])
+
+            # Get Data
+            data_merge = pd.DataFrame()
+            for i in range(len(df)):
+                url_arr = df.loc[i]
+                url = str(url_arr[0])
+
+                response1 = requests.get(url, headers=auth)
+                raw = response1.json()
+                data = pd.DataFrame(raw["transactions"])
+                data_merge = data_merge.append(data)
+
+            if "instrument" in data_merge.columns:
+                error = 0
+            else:
+                error = 1
+
+        except:
+
+            error = 1
+            data_merge = pd.DataFrame()
+
+        return data_merge, error
