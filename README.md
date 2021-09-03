@@ -33,6 +33,7 @@ Generic Python Package for Brokerage and Trade Executions.
 
 <div align="right">
 
+[![Release Drafter](https://github.com/altcp/gbrokerexe/actions/workflows/release-drafter.yml/badge.svg)](https://github.com/altcp/gbrokerexe/actions/workflows/release-drafter.yml)
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/altcp/gdemandfcast/releases)
 
 </div>
@@ -66,7 +67,7 @@ This project is licensed under the terms of the `GNU GPL v3.0` license.
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/altcp/gbrokerexe}
+  howpublished = {https://github.com/altcp/gbrokerexe}
 }
 ```
 <p>&nbsp;</p>
