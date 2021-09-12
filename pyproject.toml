@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "gbrokerexe"
-version = "0.1.6"
+version = "0.1.7"
 description = "Generic Python Package for Brokerage and Trade Executions."
 readme = "README.md"
 authors = ["altcp <colab.tcp@gmail.com>"]
